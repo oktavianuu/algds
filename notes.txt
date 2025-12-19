@@ -1,0 +1,6 @@
+How to solve computational problem?
+1. Understand the problem
+2. Devise a plan
+3. Carry out the plan
+4. Review/extend
+

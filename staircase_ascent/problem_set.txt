@@ -1,0 +1,7 @@
+PROBLEM 
+There is a staircase of n-steps. Our leg is long enough that we can go up one two or three steps at a time. How many different ways we can go up?
+
+1. Understand the problem
+- A staircase with n-steps
+- We can go up one, two or three at a time
+
