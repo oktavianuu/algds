@@ -1,7 +1,50 @@
-PROBLEM 
-There is a staircase of n-steps. Our leg is long enough that we can go up one two or three steps at a time. How many different ways we can go up?
+PROBLEM
+We are standing at the bottom of a staircase with n steps. Each move, we can climb 1 or 2 steps at a time. The question is how many 
+ways to reach the top? Mathematically speaking, how many different sequences of moves get us to the top?
 
-1. Understand the problem
-- A staircase with n-steps
-- We can go up one, two or three at a time
+Better question
+How many sequences of 1s and 2s sum to n?
+
+TEST CASE: start smallest
+Case n = 0
+step(s) = 1 (completed climb even though we do nothing)
+f(0) = 1
+
+case n = 1
+possible sequences = 1
+f(1) = 1
+
+case n = 2
+possible sequences = [(1, 1), (2)] --> two ways
+f(2) = 2
+
+case n = 3
+possible sequences = [(1, 1, 1), (1, 2), (2, 1)] --> 3 ways
+
+case n = 4
+possible sequences = [(1, 1, 1, 1), (1, 1, 2), (1, 2, 1), (2, 1, 1), (2, 2)] --> 5 ways 
+
+case n = 5
+possible sequences = [(1, 1, 1, 1, 1), (1, 1, 1, 2), (1, 1, 2, 1), (1, 2, 1, 1), (1, 2, 2), (2, 1, 1, 1), (2, 1, 2), (2, 2, 1)] --> 8 ways 
+
+
+
+PATTERN?
+look at the end of each sequence, it either ends with 1 or 2. 
+The pattern means if the last step is 1 then it means it ends with n-1. If the last move is 2, then it ends with n-2. The n cannot ends with
+with both 1 and 2, so we combine them as follow:
+f(n) = f(n-1) + f(n-2)
+
+This problem:
+- uses finite sequence
+- recursion
+- case analysis
+- counting principles
+
+So here we count discrete sequence under constraint.
+
+
+Using current understanding, if the case is changed a little bit, for example we can climb 1, 2 or 3 then:
+f(n) = f(n-1) + f(n-2) + f(n-3)
+
 
